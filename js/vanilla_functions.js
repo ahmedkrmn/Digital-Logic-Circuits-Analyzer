@@ -15,7 +15,10 @@ async function handleTruthTable(formData) {
       '<span style="color: grey"><i>Loading</i></span>';
   }
   try {
-    const res = await axios.post('http://localhost:3000/api/analyze', formData);
+    const res = await axios.post(
+      'https://digital-circuits-analyzer.herokuapp.com/api/analyze',
+      formData
+    );
     for (let index = 0; index < res.data.data.length; index++) {
       document.getElementById(`x${index}`).innerText = res.data.data[index].x;
       document.getElementById(`y${index}`).innerText = res.data.data[index].y;
@@ -51,8 +54,10 @@ document.getElementById('image_file').onchange = function () {
     e.preventDefault();
     const formData = new FormData(linkForm);
     const circuit_id = formData.get('link').split('/').slice(-1)[0];
+
+    // Add cors proxy because the api has cors protection
     const api_endpoint =
-      'https://api.circuit-diagram.org/document/store/render/' +
+      'https://cors-anywhere.herokuapp.com/https://api.circuit-diagram.org/document/store/render/' +
       circuit_id +
       '.png';
     fetch(api_endpoint)
