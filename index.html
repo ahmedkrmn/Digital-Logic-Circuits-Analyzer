@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Website Title -->
+    <title>Digital Logic Analyzer</title>
+
+    <!-- Styles -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <!-- Favicon  -->
+    <link rel="icon" href="images/gate_favicon.jpg" />
+  </head>
+  <body data-spy="scroll" data-target=".fixed-top">
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+    <!-- end of preloader -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-awesome fas fa-bars"></span>
+          <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#header"
+                >HOME <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#upload">UPLOAD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#draw">DRAW</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page-scroll" href="#analyze">ANALYZE</a>
+            </li>
+          </ul>
+          <span class="nav-item">
+            <a
+              class="btn-outline-sm"
+              target="_blank"
+              href="https://github.com/ahmedkrmn/Digital-Logic-Circuits-Analyzer"
+              >CONTRIBUTE
+            </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="header" class="header">
+      <div class="header-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-xl-6">
+              <div class="text-container">
+                <h1>
+                  Digital Logic Circuits Simulation With a Click of a Button
+                </h1>
+                <p class="p-large">
+                  Easily analyze your logic circuits using state-of-the art deep
+                  learning and image processing.
+                </p>
+                <a
+                  class="btn-solid-lg page-scroll"
+                  style="margin-right: 7px;"
+                  href="#draw"
+                  >DRAW</a
+                >
+                <span style="color: white;">or</span>
+                <a
+                  class="btn-solid-lg page-scroll"
+                  style="margin-left: 7px;"
+                  href="#upload"
+                  >UPLOAD</a
+                >
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-xl-6">
+              <div class="image-container">
+                <div class="img-wrapper">
+                  <img
+                    class="img-fluid"
+                    src="images/gates.png"
+                    alt="alternative"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <svg
+      class="header-frame"
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      viewBox="0 0 1920 310"
+    >
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #5f4def;
+          }
+        </style>
+      </defs>
+      <title>header-frame</title>
+      <path
+        class="cls-1"
+        d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"
+      />
+    </svg>
+
+    <!-- Upload -->
+    <div id="upload" class="basic-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="text-container">
+              <h2>Upload Your Sketch</h2>
+              <p>
+                Select a hand drawn image of a digital logic circuit. Please try
+                to follow the instructions below when uploading:
+              </p>
+              <ul class="list-unstyled li-space-lg">
+                <li class="media">
+                  <i class="fas fa-square"></i>
+                  <div class="media-body">
+                    Insure enough lighting when taking the picture of the image.
+                  </div>
+                </li>
+                <li class="media">
+                  <i class="fas fa-square"></i>
+                  <div class="media-body">
+                    Take a planar view picture of your circuit.
+                  </div>
+                </li>
+              </ul>
+              <form id="upload_form">
+                <div class="form-group">
+                  <button
+                    type="button"
+                    id="image_upload"
+                    class="form-control-submit-button"
+                  >
+                    UPLOAD
+                  </button>
+                  <input
+                    type="file"
+                    id="image_file"
+                    name="image_file"
+                    style="display: none;"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="image-container">
+              <img
+                style="
+                  filter: drop-shadow(5px 8px 5px #ccd7ec);
+                  max-width: 150%;
+                  height: auto;
+                "
+                class="img-fluid"
+                src="images/sketch2.png"
+                alt="alternative"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Draw -->
+    <div id="draw" class="tabs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="h2-heading">Draw Online</h2>
+            <p class="p-heading">
+              Draw Your Circuit Online Using Drag and Drop Elements
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- Tabs Content -->
+            <div class="tab-content" id="argoTabsContent">
+              <div
+                class="tab-pane fade show active"
+                id="tab-1"
+                role="tabpanel"
+                aria-labelledby="tab-1"
+              >
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="image-container">
+                      <img
+                        style="
+                          filter: drop-shadow(5px 5px 5px lightgrey);
+                          max-width: 150%;
+                          height: auto;
+                          cursor: pointer;
+                        "
+                        onclick="openCircuitWindow()"
+                        class="img-fluid"
+                        src="images/circuit2.png"
+                        alt="alternative"
+                      />
+                      <iframe
+                        style="width: 0; height: 0; border: 0; border: none;"
+                        id="circuit-diagram"
+                        src="https://www.circuit-diagram.org/editor/"
+                      >
+                      </iframe>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="text-container">
+                      <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                          <i class="fas fa-square"></i>
+                          <div class="media-body">
+                            Open the circuit drawing tool by clicking on the
+                            circuit on the left.
+                          </div>
+                        </li>
+                        <li class="media">
+                          <i class="fas fa-square"></i>
+                          <div class="media-body">
+                            Draw your digital logic circuit using the provided
+                            logic gates and connect them using wires.
+                          </div>
+                        </li>
+                        <li class="media">
+                          <i class="fas fa-square"></i>
+                          <div class="media-body">
+                            Click on the <strong>Share</strong> button in the
+                            top bar and follow the steps until you have the
+                            circuit link.
+                          </div>
+                        </li>
+                        <li class="media">
+                          <i class="fas fa-square"></i>
+                          <div class="media-body">
+                            Paste the link in the bellow and click analyze.
+                          </div>
+                        </li>
+                      </ul>
+                      <form id="link_form">
+                        <div class="form-group">
+                          <input
+                            type="url"
+                            id="link"
+                            name="link"
+                            class="form-control-input"
+                            id="nlink"
+                            required
+                          />
+                          <label class="label-control" for="nlink"
+                            >Circuit link</label
+                          >
+                          <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                          <button
+                            type="submit"
+                            class="form-control-submit-button"
+                          >
+                            ANALYZE
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analysis -->
+    <div id="analyze" class="cards-2" style="margin-bottom: 100px;">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12">
+            <div class="above-heading">ANALYSIS</div>
+            <h2 class="h2-heading">Circuit Truth Table</h2>
+          </div>
+          <div class="card col-lg-5" id="circuit_card">
+            <div class="card-body">
+              <h5 class="card-title" id="circuit_card_title">Circuit</h5>
+              <h6 class="card-subtitle mb-2 text-muted"></h6>
+              <p class="card-text" id="circuit_card_text">
+                Input circuit will appear here. Please upload or draw a circuit
+                to analyze.
+              </p>
+              <a
+                href="#upload"
+                class="card-link page-scroll"
+                id="circuit_card_link1"
+                >Upload</a
+              >
+              <a
+                href="#draw"
+                class="card-link page-scroll"
+                id="circuit_card_link2"
+                >Draw</a
+              >
+              <img src="" alt="" id="card_image" class="img-fluid" />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">X</th>
+                  <th scope="col">Y</th>
+                  <th scope="col">Z</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="x0">0</td>
+                  <td id="y0">0</td>
+                  <td id="z0">-</td>
+                </tr>
+                <tr>
+                  <td id="x1">0</td>
+                  <td id="y1">1</td>
+                  <td id="z1">-</td>
+                </tr>
+                <tr>
+                  <td id="x2">1</td>
+                  <td id="y2">0</td>
+                  <td id="z2">-</td>
+                </tr>
+                <tr>
+                  <td id="x3">1</td>
+                  <td id="y3">1</td>
+                  <td id="z3">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/axios.min.js"></script>
+    <!-- Axios -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script>
+    <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/vanilla_functions.js"></script>
+    <script src="js/jquery_functions.js"></script>
+    <!-- Custom scripts -->
+  </body>
+</html>

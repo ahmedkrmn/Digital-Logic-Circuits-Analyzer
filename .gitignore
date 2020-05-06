@@ -1,0 +1,6 @@
+# vs code configurations
+.vscode/
+
+# unneeded public files
+footer.html
+_index.html
