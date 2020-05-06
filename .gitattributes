@@ -4,4 +4,3 @@ js/* linguist-vendored
 
 js/vanilla_functions.js linguist-vendored=false
 js/jquery_functions.js linguist-vendored=false
-css/style.css linguist-vendored=false
