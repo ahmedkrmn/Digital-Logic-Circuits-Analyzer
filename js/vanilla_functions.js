@@ -15,10 +15,8 @@ async function handleTruthTable(formData) {
       '<span style="color: grey"><i>Loading</i></span>';
   }
   try {
-    const res = await axios.post(
-      'https://digital-circuits-analyzer.herokuapp.com/api/analyze',
-      formData
-    );
+    console.log(window.config.API);
+    const res = await axios.post(window.config.API, formData);
     for (let index = 0; index < res.data.data.length; index++) {
       document.getElementById(`x${index}`).innerText = res.data.data[index].x;
       document.getElementById(`y${index}`).innerText = res.data.data[index].y;
