@@ -65,7 +65,7 @@
               <a class="nav-link page-scroll" href="#draw">DRAW</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="#analyze">ANALYZE</a>
+              <a class="nav-link page-scroll" href="#analyze">ANALYSIS</a>
             </li>
           </ul>
           <span class="nav-item">
@@ -94,13 +94,16 @@
                   Easily analyze your logic circuits using state-of-the art deep
                   learning and image processing.
                 </p>
+                <p class="p-large">
+                  Choose one of the options below:
+                </p>
                 <a
                   class="btn-solid-lg page-scroll"
                   style="margin-right: 7px;"
                   href="#draw"
                   >DRAW</a
                 >
-                <span style="color: white;">or</span>
+                <!-- <span style="color: white;">or</span> -->
                 <a
                   class="btn-solid-lg page-scroll"
                   style="margin-left: 7px;"
@@ -179,7 +182,7 @@
                     id="image_upload"
                     class="form-control-submit-button"
                   >
-                    UPLOAD
+                    UPLOAD*
                   </button>
                   <input
                     type="file"
@@ -187,6 +190,15 @@
                     name="image_file"
                     style="display: none;"
                   />
+                  <p
+                    style="
+                      font-style: italic;
+                      color: lightgrey;
+                      margin-top: 3px;
+                    "
+                  >
+                    *This feature is still under development!
+                  </p>
                 </div>
               </form>
             </div>
@@ -196,12 +208,12 @@
               <img
                 style="
                   filter: drop-shadow(5px 8px 5px #ccd7ec);
-                  max-width: 150%;
                   height: auto;
+                  max-width: 100%;
+                  margin-top: 5vh;
                 "
-                class="img-fluid"
                 src="images/sketch2.png"
-                alt="alternative"
+                alt="Example sketch"
               />
             </div>
           </div>
@@ -236,12 +248,12 @@
                       <img
                         style="
                           filter: drop-shadow(5px 5px 5px lightgrey);
-                          max-width: 150%;
                           height: auto;
+                          max-width: 100%;
+                          margin-top: 5vh;
                           cursor: pointer;
                         "
                         onclick="openCircuitWindow()"
-                        class="img-fluid"
                         src="images/circuit2.png"
                         alt="alternative"
                       />
