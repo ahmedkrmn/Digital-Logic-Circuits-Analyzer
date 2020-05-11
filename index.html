@@ -340,7 +340,7 @@
             <div class="above-heading">ANALYSIS</div>
             <h2 class="h2-heading">Circuit Truth Table</h2>
           </div>
-          <div class="card col-lg-5" id="circuit_card">
+          <div class="card col-lg-8" id="circuit_card">
             <div class="card-body">
               <h5 class="card-title" id="circuit_card_title">Circuit</h5>
               <h6 class="card-subtitle mb-2 text-muted"></h6>
@@ -363,12 +363,13 @@
               <img src="" alt="" id="card_image" class="img-fluid" />
             </div>
           </div>
-          <div class="col-lg-6">
-            <table class="table table-bordered">
-              <thead>
+          <div id="truth-table-container" class="col-lg-8">
+            <div class="loader"></div>
+            <table id="truth-table" class="table table-bordered">
+              <!-- <thead>
                 <tr>
-                  <th scope="col">X</th>
-                  <th scope="col">Y</th>
+                  <th scope="col">A</th>
+                  <th scope="col">B</th>
                   <th scope="col">Z</th>
                 </tr>
               </thead>
@@ -393,7 +394,7 @@
                   <td id="y3">1</td>
                   <td id="z3">-</td>
                 </tr>
-              </tbody>
+              </tbody> -->
             </table>
           </div>
         </div>
