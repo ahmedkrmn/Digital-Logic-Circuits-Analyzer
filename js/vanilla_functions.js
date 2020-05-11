@@ -34,7 +34,7 @@ async function handleTruthTable(formData) {
     const res = await axios.post(window.config.API, formData);
 
     // Loop on log2(size) to create the table headers
-    for (let index = 0; index < Math.log(res.data.data.length); index++) {
+    for (let index = 0; index < Math.log2(res.data.data.length); index++) {
       let th = document.createElement("th");
       th.innerText = String.fromCharCode(letter++);
       tr.appendChild(th);
