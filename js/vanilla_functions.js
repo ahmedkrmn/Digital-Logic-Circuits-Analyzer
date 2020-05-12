@@ -24,15 +24,14 @@ async function handleTruthTable(formData) {
   document.querySelector(".loader").style.display = "block";
 
   try {
-    // First letter of the inputs
-    let letter = "A".charCodeAt(0);
-
     // Create headers row
     let tr = document.createElement("tr");
 
     // Fetch response from API
     const res = await axios.post(window.config.API, formData);
 
+    // Input headers
+    let letter = "A".charCodeAt(0);
     // Loop on log2(size) to create the table headers
     for (let index = 0; index < Math.log2(res.data.data.length); index++) {
       let th = document.createElement("th");
@@ -40,10 +39,18 @@ async function handleTruthTable(formData) {
       tr.appendChild(th);
     }
 
-    // Add output (Z) header
-    let th = document.createElement("th");
-    th.innerText = "Z";
-    tr.appendChild(th);
+    // Output headers
+    if (res.data.data.length) {
+      // Get first output name
+      letter = 90 - res.data.data[0].length + 2;
+      console.log(String.fromCharCode(letter));
+      // Choose first array as reference, all will have the same number of outputs
+      for (let index = 1; index < res.data.data[0].length; index++) {
+        let th = document.createElement("th");
+        th.innerText = String.fromCharCode(letter++);
+        tr.appendChild(th);
+      }
+    }
 
     // Append row to table header
     thead.appendChild(tr);
@@ -53,15 +60,19 @@ async function handleTruthTable(formData) {
       // Create a row for each entry
       let tr = document.createElement("tr");
 
-      // Loop on the array of the ith entry and create a td for each
+      // Loop on the array of the ith entry and create a td for each input
       for (let j = 0; j < res.data.data[i][0].length; j++) {
         let td = document.createElement("td");
         td.innerText = res.data.data[i][0][j];
         tr.appendChild(td);
       }
-      let td = document.createElement("td");
-      td.innerText = res.data.data[i][1];
-      tr.appendChild(td);
+
+      // Loop on the array of the ith entry and create a td for each output
+      for (let j = 1; j < res.data.data[i].length; j++) {
+        let td = document.createElement("td");
+        td.innerText = res.data.data[i][j];
+        tr.appendChild(td);
+      }
 
       // Append row to table body
       tbody.appendChild(tr);
